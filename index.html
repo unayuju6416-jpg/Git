@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RWD 練習 - 響應式方格</title>
+  <style>
+    /* 排版居中與基礎樣式 */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* 
+      1. 預設樣式（電腦大螢幕 / > 900px）
+      - 形狀：正方形 (300x300)
+      - 顏色：珊瑚橙 (#ff6b6b)
+    */
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: #ff6b6b;
+      border-radius: 0; /* 直角正方形 */
+      transition: all 0.3s ease; /* 增添切換滑順感 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* 
+      2. 第一個斷點：平板與中型螢幕 ( <= 900px )
+      - 形狀：圓角長方形 / 扁矩形 (400x200)
+      - 顏色：海洋藍 (#4ecdc4)
+    */
+    @media (max-width: 900px) {
+      .box {
+        width: 400px;
+        height: 200px;
+        background-color: #4ecdc4;
+        border-radius: 20px; /* 圓角 */
+      }
+    }
+
+    /* 
+      3. 第二個斷點：手機小螢幕 ( <= 600px )
+      - 形狀：正圓形 (250x250)
+      - 顏色：深紫羅蘭 (#6c5ce7)
+    */
+    @media (max-width: 600px) {
+      .box {
+        width: 250px;
+        height: 250px;
+        background-color: #6c5ce7;
+        border-radius: 50%; /* 正圓形 */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>RWD 響應式形狀與顏色切換</h1>
+  <div class="box">RWD Box</div>
+
+</body>
+</html>
